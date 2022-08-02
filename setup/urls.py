@@ -17,12 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from address.views import AddressViewSet
+from animal.views import AnimalViewSet
 
 from customer.views import CustomerViewSet
+from scheduling.models import SchedulingModel
 
 router = routers.DefaultRouter()
 router.register('customer', CustomerViewSet, basename='Customer')
 router.register('address', AddressViewSet, basename="Address")
+router.register('animal', AnimalViewSet, basename="Animal")
+router.register('scheduling', SchedulingModel, basename="Scheduling")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

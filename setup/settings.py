@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'customer',
     'address',
     'animal',
+    'scheduling',
 ]
 
 MIDDLEWARE = [
