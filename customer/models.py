@@ -20,7 +20,13 @@ class CustomerModel(models.Model):
         unique=True,
         max_length=14,
         db_column="CPF"
-        )
+        ) #CPF
+    
+    birth_date = models.DateField(
+        db_column="BIRTH_DATE",
+        blank =True,
+        null=True
+    ) #Data de aniversario
 
     email = models.EmailField(
         db_column="EMAIL"

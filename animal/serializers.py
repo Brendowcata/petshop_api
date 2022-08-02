@@ -10,9 +10,11 @@ class AnimalSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "name",
+            "gender",
             "breed",
             "size",
             "color",
+            "birth_date",
             "observation",
             "customer",
         ]

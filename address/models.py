@@ -1,39 +1,10 @@
 import uuid
 from django.db import models
+from address.enums import States_Type
 
 from customer.models import CustomerModel
 
 class AddressModel(models.Model):
-
-    STATES = (
-        ('SC', 'Santa Catarina'),
-        ('AC', 'Acre'),
-        ('AL', 'Alagoas'),
-        ('AP', 'Amapa'),
-        ('AM', 'Amazonas'),
-        ('BA', 'Bahia'),
-        ('CE', 'Ceara'),
-        ('ES', 'Espirito Santo'),
-        ('GO', 'Goias'),
-        ('MA', 'Maranhão'),
-        ('MT', 'Mato Grosso'),
-        ('MS', 'Mato Grosso do Sul'),
-        ('MG', 'Minas Gerais'),
-        ('PA', 'Para'),
-        ('PB', 'Paraiba'),
-        ('PR', 'Parana'),
-        ('PE', 'Pernambuco'),
-        ('PI', 'Piaui'),
-        ('RJ', 'Rio de Janeiro'),
-        ('RN', 'Rio Grande do Norte'),
-        ('RS', 'Rio Grande Do Sul'),
-        ('RO', 'Rondônia'),
-        ('RR', 'Roraima'),
-        ('SP', 'São Paulo'),
-        ('SE', 'Sergipe'),
-        ('TO', 'Tocantins'),
-        ('DF', 'Distrito Federal')
-    )
 
     id = models.UUIDField(
         db_column="id", 
@@ -60,7 +31,7 @@ class AddressModel(models.Model):
 
     state = models.CharField(
         max_length=2, 
-        choices=STATES, 
+        choices=States_Type.choices(), 
         blank=False, 
         null=False, 
         db_column="STATE"

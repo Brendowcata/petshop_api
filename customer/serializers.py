@@ -9,6 +9,7 @@ class CustomerSerializer(serializers.ModelSerializer):
             "id",
             "name",
             "cpf",
+            "birth_date",
             "email",
             "telephone",
             "phone_number",
