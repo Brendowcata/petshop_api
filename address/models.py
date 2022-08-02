@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 
-from apps.customer.models import CustomerModel
+from customer.models import CustomerModel
 
 class AddressModel(models.Model):
 
@@ -78,7 +78,7 @@ class AddressModel(models.Model):
     
     customer = models.ForeignKey(
         CustomerModel, 
-        on_delete=models.DO_NOTHING,
+        on_delete=models.CASCADE,
         null=False,
         db_column="CUSTOMER") #Cliente
     
@@ -86,3 +86,6 @@ class AddressModel(models.Model):
         db_table = "ADDRESS"
         verbose_name = "address"
         verbose_name_plural = "addresses"
+    
+    def __str__(self) -> str:
+        return f"{self.street}, {self.house_number}"

@@ -17,6 +17,7 @@ class CustomerModel(models.Model):
     
 
     cpf = models.CharField(
+        unique=True,
         max_length=14,
         db_column="CPF"
         )
