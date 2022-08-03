@@ -2,6 +2,7 @@ from enum import Enum
 
 class Clipping_Type(Enum):
 
+    SEM_SERVICO = "Sem Serviço"
     TOSA_TESOURA = "Tosa na Tesoura"
     TOSA_MAQUINA = "Tosa na Máquina"
     TOSA_BEBE = "Tosa Bebê"
@@ -16,6 +17,7 @@ class Clipping_Type(Enum):
 
 class Dyeing_Type(Enum):
 
+    SEM_SERVICO = "Sem Serviço"
     VERMELHO = "Vermelho"
     AMARELO = "Amarelo"
     AZUL = "Azul"

@@ -20,6 +20,7 @@ from address.views import AddressViewSet
 from animal.views import AnimalViewSet
 
 from customer.views import CustomerViewSet
+from monthly.views import MonthlyViewSet
 from scheduling.views import SchedulingViewSet
 
 router = routers.DefaultRouter()
@@ -27,6 +28,7 @@ router.register('customer', CustomerViewSet, basename='Customer')
 router.register('address', AddressViewSet, basename="Address")
 router.register('animal', AnimalViewSet, basename="Animal")
 router.register('scheduling', SchedulingViewSet, basename="Scheduling")
+router.register('monthly', MonthlyViewSet, basename="Monthly")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -38,7 +38,7 @@ class SchedulingModel(models.Model):
         ) #Desembaraçamento
 
     dyeing = models.CharField(
-        max_length=8,
+        max_length=11,
         choices=Dyeing_Type.choices(),
         blank=True,
         null=True,

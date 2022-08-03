@@ -75,4 +75,4 @@ class AnimalModel(models.Model):
 
 
     def __str__(self) -> str:
-        return f"{self.name}, {self.customer}"
+        return f"{self.name} - dono: {self.customer}"

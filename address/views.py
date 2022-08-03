@@ -7,3 +7,6 @@ class AddressViewSet(viewsets.ModelViewSet):
     queryset = AddressModel.objects.all()
     serializer_class = AddressSerializer
     http_method_names = ['get', 'post', 'put', 'patch', 'delete']
+    ordering_fields = ['customer']
+    search_fields = ['customer']
+    filterset_fields = ['street', 'neighborhood', 'city', 'state', 'zip_code', 'customer']
