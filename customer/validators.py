@@ -24,5 +24,7 @@ def phone_number_isValid(phone_number):
 
 def cpf_isValid(cpf):
     """Check if the cpf is valid / Verifica se o cpf é válido"""
+    standard = '[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}'
+    response = re.findall(standard, cpf)
     cpf_valid = CPF()
     return cpf_valid.validate(cpf)

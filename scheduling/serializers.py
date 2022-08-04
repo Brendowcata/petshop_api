@@ -4,7 +4,6 @@ from scheduling.models import SchedulingModel
 from scheduling.validators import *
 
 class SchedulingSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = SchedulingModel
         fields = [

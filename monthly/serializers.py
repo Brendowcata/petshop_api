@@ -12,7 +12,6 @@ class MonthlySerializer(serializers.ModelSerializer):
             "value_money",
             "amount_paid",
             "scheduling_amount",
-            "customer",
             "animal"
         ]
 
@@ -26,7 +25,6 @@ class MonthlyPostSerializer(serializers.ModelSerializer):
             "value_money",
             "amount_paid",
             "scheduling_amount",
-            "customer",
             "animal"
         ]
     

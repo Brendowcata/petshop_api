@@ -34,12 +34,6 @@ class MonthlyModel(models.Model):
         db_column="SCHEDULING_AMOUNT"
     ) #Quantidade de agendamento   
     
-    customer = models.ForeignKey(
-        CustomerModel, 
-        on_delete=models.CASCADE,
-        null=False,
-        db_column="CUSTOMER") #Cliente
-    
     animal = models.ForeignKey(
         AnimalModel,
         on_delete=models.CASCADE,
