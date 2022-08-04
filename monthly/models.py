@@ -30,7 +30,7 @@ class MonthlyModel(models.Model):
         db_column="AMOUNT_PAID"
         ) #Valor Pago
 
-    scheduling_amount = models.IntegerField(
+    scheduling_amount = models.PositiveIntegerField(
         db_column="SCHEDULING_AMOUNT"
     ) #Quantidade de agendamento   
     

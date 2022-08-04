@@ -1,3 +1,5 @@
+from unittest.util import _MAX_LENGTH
+from wsgiref import validate
 from django.db import models
 import uuid
 
@@ -34,12 +36,13 @@ class CustomerModel(models.Model):
     
     telephone = models.CharField(
         max_length=14,
+        blank=True,
+        null=True,
         db_column="TELEPHONE"
         ) #Telefone
 
     phone_number = models.CharField(
-        max_length=15, 
-        blank=True,
+        max_length=15,
         db_column="PHONE_NUMBER"
         ) #Celular
 

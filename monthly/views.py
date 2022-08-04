@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from monthly.models import MonthlyModel
-from monthly.serializers import MonthlySerializer
+from monthly.serializers import MonthlyPostSerializer, MonthlySerializer
 
 
 class MonthlyViewSet(viewsets.ModelViewSet):
@@ -11,3 +11,9 @@ class MonthlyViewSet(viewsets.ModelViewSet):
     ordering_fields = ['date_initial', 'date_final', 'value_money', 'customer', 'animal']
     search_fields = ['date_initial', 'date_final', 'customer',]
     filterset_fields = ['date_initial', 'date_final', 'value_money', 'customer', 'animal',]
+
+    def get_serializer_class(self):
+
+        if self.request.method in ['POST']:
+            return MonthlyPostSerializer
+        return MonthlySerializer

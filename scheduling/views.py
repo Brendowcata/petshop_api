@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from scheduling.models import SchedulingModel
-from scheduling.serializers import SchedulingSerializer
+from scheduling.serializers import SchedulingPostSerializer, SchedulingSerializer
 
 class SchedulingViewSet(viewsets.ModelViewSet):
     """Displaying all schedules / Exibindo todos os agendamentos"""
@@ -13,3 +13,9 @@ class SchedulingViewSet(viewsets.ModelViewSet):
     filterset_fields = ['bath', 'clipping', 'hydration', 'clearance', 'dyeing', 
     'brush_teeth', 'cut_nails', 'transport', 'date_appointment', 
     'value_money', 'animal']
+
+    def get_serializer_class(self):
+
+        if self.request.method in ['POST']:
+            return SchedulingPostSerializer
+        return SchedulingSerializer
