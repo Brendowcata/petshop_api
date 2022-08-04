@@ -65,6 +65,7 @@ class AnimalModel(models.Model):
     customer = models.ForeignKey(
         CustomerModel, 
         on_delete=models.CASCADE, 
+        related_name="animal",
         null=False
         ) #Cliente
     

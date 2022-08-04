@@ -31,6 +31,6 @@ router.register('scheduling', SchedulingViewSet, basename="Scheduling")
 router.register('monthly', MonthlyViewSet, basename="Monthly")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('petshopadmin/', admin.site.urls),
     path('', include(router.urls)),
 ]
