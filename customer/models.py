@@ -2,16 +2,16 @@ from django.db import models
 import uuid
 
 class CustomerModel(models.Model):
-    id = models.UUIDField(
-        db_column="id", 
-        primary_key=True, 
+    external_id = models.UUIDField(
+        db_column="EXTERNAL_ID", 
         editable=False, 
-        unique=True, 
+        unique=True,
         default= uuid.uuid4
-        ) #id
+        ) #id externo
+    
 
     name = models.CharField(
-        max_length=100, 
+        max_length=150, 
         db_column="NAME"
         ) #Nome
     

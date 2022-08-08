@@ -8,9 +8,9 @@ class MonthlyViewSet(viewsets.ModelViewSet):
     queryset = MonthlyModel.objects.all()
     serializer_class = MonthlySerializer
     http_method_names = ['get', 'post', 'put', 'patch']
-    ordering_fields = ['date_initial', 'date_final', 'value_money', 'animal']
+    ordering_fields = ['date_initial', 'date_final', 'payment', 'animal']
     search_fields = ['date_initial', 'date_final',]
-    filterset_fields = ['date_initial', 'date_final', 'value_money', 'animal',]
+    filterset_fields = ['date_initial', 'date_final', 'payment', 'animal',]
 
     def get_serializer_class(self):
 

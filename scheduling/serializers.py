@@ -8,6 +8,7 @@ class SchedulingSerializer(serializers.ModelSerializer):
         model = SchedulingModel
         fields = [
             "id",
+            "external_id",
             "bath",
             "clipping",
             "hydration",
@@ -17,8 +18,7 @@ class SchedulingSerializer(serializers.ModelSerializer):
             "transport",
             "date_appointment",
             "hour_appointment",
-            "value_money",
-            "amount_paid",
+            "payment",
             "animal",
         ]
 
@@ -27,6 +27,7 @@ class SchedulingPostSerializer(serializers.ModelSerializer):
         model = SchedulingModel
         fields = [
             "id",
+            "external_id",
             "bath",
             "clipping",
             "hydration",
@@ -36,8 +37,7 @@ class SchedulingPostSerializer(serializers.ModelSerializer):
             "transport",
             "date_appointment",
             "hour_appointment",
-            "value_money",
-            "amount_paid",
+            "payment",
             "animal",
         ]
     
@@ -46,16 +46,6 @@ class SchedulingPostSerializer(serializers.ModelSerializer):
         if not date_appointment_greater_today(data['date_appointment']):
             raise serializers.ValidationError(
                 {'Date': "A data inicial deve ser maior ou igual que hoje!"}
-            )
-        
-        if not value_money_isPositive(data['value_money']):
-            raise serializers.ValidationError(
-                {'Value_money': "O valor deve ser maior que 0"}
-            )
-
-        if not amount_paid_isPositive(data['amount_paid']):
-            raise serializers.ValidationError(
-                {'Amount_paid': "O valor deve ser maior que 0"}
             )
 
         return data

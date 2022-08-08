@@ -10,6 +10,7 @@ class CustomerSerializer(serializers.ModelSerializer):
         model = CustomerModel
         fields = [
             "id",
+            "external_id",
             "name",
             "cpf",
             "birth_date",
@@ -24,6 +25,7 @@ class CustomerPostSerializer(serializers.ModelSerializer):
         model = CustomerModel
         fields = [
             "id",
+            "external_id",
             "name",
             "cpf",
             "birth_date",

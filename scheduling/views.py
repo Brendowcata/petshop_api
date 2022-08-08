@@ -8,11 +8,10 @@ class SchedulingViewSet(viewsets.ModelViewSet):
     queryset = SchedulingModel.objects.all()
     serializer_class = SchedulingSerializer
     http_method_names = ['get', 'post', 'put', 'patch', 'delete']
-    ordering_fields = ['date_appointment', 'value_money', 'animal']
+    ordering_fields = ['date_appointment', 'animal']
     search_fields = ['date_appointment', 'animal',]
     filterset_fields = ['bath', 'clipping', 'hydration', 'clearance',  
-    'brush_teeth', 'cut_nails', 'transport', 'date_appointment', 
-    'value_money', 'animal']
+    'brush_teeth', 'cut_nails', 'transport', 'date_appointment', 'animal']
 
     def get_serializer_class(self):
 

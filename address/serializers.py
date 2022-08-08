@@ -7,6 +7,8 @@ class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddressModel
         fields = [
+            "id",
+            "external_id",
             "street",
             "neighborhood",
             "city",
@@ -20,6 +22,8 @@ class AddressPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddressModel
         fields = [
+            "id",
+            "external_id",
             "street",
             "neighborhood",
             "city",

@@ -10,6 +10,7 @@ class AnimalSerializer(serializers.ModelSerializer):
         model = AnimalModel
         fields = [
             "id",
+            "external_id",
             "name",
             "gender",
             "breed",
@@ -25,6 +26,7 @@ class AnimalPostSerializer(serializers.ModelSerializer):
         model = AnimalModel
         fields = [
             "id",
+            "external_id",
             "name",
             "gender",
             "breed",

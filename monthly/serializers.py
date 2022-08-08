@@ -7,12 +7,12 @@ class MonthlySerializer(serializers.ModelSerializer):
         model = MonthlyModel
         fields = [
             "id",
+            "external_id",
             "date_initial",
             "date_final",
-            "value_money",
-            "amount_paid",
             "scheduling_amount",
-            "animal"
+            "payment",
+            "animal",
         ]
 
 class MonthlyPostSerializer(serializers.ModelSerializer):
@@ -20,12 +20,12 @@ class MonthlyPostSerializer(serializers.ModelSerializer):
         model = MonthlyModel
         fields = [
             "id",
+            "external_id",
             "date_initial",
             "date_final",
-            "value_money",
-            "amount_paid",
             "scheduling_amount",
-            "animal"
+            "payment",
+            "animal",
         ]
     
     def validate(self, data):
@@ -39,14 +39,4 @@ class MonthlyPostSerializer(serializers.ModelSerializer):
                 {'Date': "A data inicial deve ser maior ou igual que hoje!"}
             )
         
-        if not value_money_isPositive(data['value_money']):
-            raise serializers.ValidationError(
-                {'Value_money': "O valor deve ser maior que 0"}
-            )
-
-        if not amount_paid_isPositive(data['amount_paid']):
-            raise serializers.ValidationError(
-                {'Amount_paid': "O valor deve ser maior que 0"}
-            )
-
         return data

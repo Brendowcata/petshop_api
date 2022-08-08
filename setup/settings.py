@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'animal',
     'scheduling',
     'monthly',
+    'payment',
 ]
 
 MIDDLEWARE = [
