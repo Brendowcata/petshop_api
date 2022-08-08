@@ -1,5 +1,3 @@
-from unittest.util import _MAX_LENGTH
-from wsgiref import validate
 from django.db import models
 import uuid
 
@@ -31,6 +29,8 @@ class CustomerModel(models.Model):
     ) #Data de aniversario
 
     email = models.EmailField(
+        null=True,
+        blank=True,
         db_column="EMAIL"
         ) #E-mail
     

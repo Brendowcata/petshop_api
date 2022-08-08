@@ -2,7 +2,7 @@ from django.db import models
 from animal.models import AnimalModel
 import uuid
 
-from scheduling.enums import Clipping_Type, Dyeing_Type
+from scheduling.enums import Clipping_Type
 
 class SchedulingModel(models.Model):
 
@@ -37,15 +37,6 @@ class SchedulingModel(models.Model):
         db_column="CLEARANCE"
         ) #Desembaraçamento
 
-    dyeing = models.CharField(
-        max_length=11,
-        choices=Dyeing_Type.choices(),
-        blank=True,
-        null=True,
-        db_column="DYEING"
-        ) #Tingimento
-        
-    
     brush_teeth = models.BooleanField(
         default=False,
         db_column="BRUSH_TEETH"

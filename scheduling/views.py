@@ -10,7 +10,7 @@ class SchedulingViewSet(viewsets.ModelViewSet):
     http_method_names = ['get', 'post', 'put', 'patch', 'delete']
     ordering_fields = ['date_appointment', 'value_money', 'animal']
     search_fields = ['date_appointment', 'animal',]
-    filterset_fields = ['bath', 'clipping', 'hydration', 'clearance', 'dyeing', 
+    filterset_fields = ['bath', 'clipping', 'hydration', 'clearance',  
     'brush_teeth', 'cut_nails', 'transport', 'date_appointment', 
     'value_money', 'animal']
 
