@@ -7,10 +7,33 @@ class MonthlyViewSet(viewsets.ModelViewSet):
     """Displaying all schedules / Exibindo todos os agendamentos"""
     queryset = MonthlyModel.objects.all()
     serializer_class = MonthlySerializer
-    http_method_names = ['get', 'post', 'put', 'patch']
-    ordering_fields = ['date_initial', 'date_final', 'payment', 'animal']
-    search_fields = ['date_initial', 'date_final',]
-    filterset_fields = ['date_initial', 'date_final', 'payment', 'animal',]
+
+    http_method_names = [
+        'get', 
+        'post', 
+        'put', 
+        'patch',
+        ]
+
+    ordering_fields = [
+        'date_initial', 
+        'date_final', 
+        'payment', 
+        'pet',
+        ]
+
+    search_fields = [
+        'date_initial', 
+        'date_final',
+        'external_id',
+        ]
+
+    filterset_fields = [
+        'date_initial', 
+        'date_final', 
+        'payment', 
+        'pet',
+        ]
 
     def get_serializer_class(self):
 

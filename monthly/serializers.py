@@ -12,7 +12,7 @@ class MonthlySerializer(serializers.ModelSerializer):
             "date_final",
             "scheduling_amount",
             "payment",
-            "animal",
+            "pet",
         ]
 
 class MonthlyPostSerializer(serializers.ModelSerializer):
@@ -25,18 +25,18 @@ class MonthlyPostSerializer(serializers.ModelSerializer):
             "date_final",
             "scheduling_amount",
             "payment",
-            "animal",
+            "pet",
         ]
     
     def validate(self, data):
         if not date_initial_smaller_date_final(data['date_initial'], data['date_final']):
             raise serializers.ValidationError(
-                {'Date': "O Tempo inicial deve ser menor que o tempo final!"}
+                {'date': "O Tempo inicial deve ser menor que o tempo final!"}
             )
 
         if not date_initial_greater_today(data['date_initial']):
             raise serializers.ValidationError(
-                {'Date': "A data inicial deve ser maior ou igual que hoje!"}
+                {'date': "A data inicial deve ser maior ou igual que hoje!"}
             )
         
         return data

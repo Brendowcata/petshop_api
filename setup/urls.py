@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from address.views import AddressViewSet
-from animal.views import AnimalViewSet
+from pet.views import PetViewSet
 
 from customer.views import CustomerViewSet
 from monthly.views import MonthlyViewSet
@@ -27,7 +27,7 @@ from payment.views import PaymentViewSet
 router = routers.DefaultRouter()
 router.register('customer', CustomerViewSet, basename='Customer')
 router.register('address', AddressViewSet, basename="Address")
-router.register('animal', AnimalViewSet, basename="Animal")
+router.register('pet', PetViewSet, basename="Pet")
 router.register('scheduling', SchedulingViewSet, basename="Scheduling")
 router.register('monthly', MonthlyViewSet, basename="Monthly")
 router.register('payment', PaymentViewSet, basename="Payment")

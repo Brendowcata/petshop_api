@@ -6,10 +6,32 @@ class AddressViewSet(viewsets.ModelViewSet):
     """Displaying all addresses / Exibindo todos os endereços"""
     queryset = AddressModel.objects.all()
     serializer_class = AddressSerializer
-    http_method_names = ['get', 'post', 'put', 'patch', 'delete']
-    ordering_fields = ['customer']
-    search_fields = ['customer']
-    filterset_fields = ['street', 'neighborhood', 'city', 'state', 'zip_code', 'customer']
+
+    http_method_names = [
+        'get', 
+        'post', 
+        'put', 
+        'patch', 
+        'delete',
+        ]
+
+    ordering_fields = [
+        'customer'
+        ]
+
+    search_fields = [
+        'customer',
+        'external_id',
+        ]
+
+    filterset_fields = [
+        'street', 
+        'neighborhood', 
+        'city', 
+        'state', 
+        'zip_code', 
+        'customer'
+        ]
 
     def get_serializer_class(self):
 

@@ -15,7 +15,7 @@ class AddressSerializer(serializers.ModelSerializer):
             "state",
             "zip_code",
             "house_number",
-            "customer"
+            "customer",
         ]
 
 class AddressPostSerializer(serializers.ModelSerializer):
@@ -30,23 +30,23 @@ class AddressPostSerializer(serializers.ModelSerializer):
             "state",
             "zip_code",
             "house_number",
-            "customer"
+            "customer",
         ]
     
     def validate(self, data):
-        if not city_isValid(data['city']):
+        if not is_city_valid(data['city']):
             raise serializers.ValidationError(
-                {'City': "Este campo não deve conter números!"}
+                {'city': "Este campo não deve conter números!"}
             )
         
-        if not zip_code_isValid(data['zip_code']):
+        if not is_zip_code_valid(data['zip_code']):
             raise serializers.ValidationError(
-                {'Zip_code': "Este campo deve conter 9 dígitos! Favor utilizar este formato XXXXX-XXX"}
+                {'zip_code': "Este campo deve conter 9 dígitos! Favor utilizar este formato XXXXX-XXX"}
             )
         
-        if not house_number_isValid(data['house_number']):
+        if not is_house_number_valid(data['house_number']):
             raise serializers.ValidationError(
-                {'House_number': "Este campo deve incluir apenas números!"}
+                {'house_number': "Este campo deve incluir apenas números!"}
             )
 
         return data

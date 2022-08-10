@@ -43,12 +43,12 @@ class PaymentPostSerializer(serializers.ModelSerializer):
                 {'Pay_day': "A data inicial deve ser maior ou igual que hoje!"}
             )
         
-        if not value_money_isPositive(data['value_money']):
+        if not is_value_money_positive(data['value_money']):
             raise serializers.ValidationError(
                 {'Value_money': "O valor deve ser maior que 0"}
             )
 
-        if not amount_paid_isPositive(data['amount_paid']):
+        if not is_amount_paid_positive(data['amount_paid']):
             raise serializers.ValidationError(
                 {'Amount_paid': "O valor deve ser maior que 0"}
             )

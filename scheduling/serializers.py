@@ -19,7 +19,7 @@ class SchedulingSerializer(serializers.ModelSerializer):
             "date_appointment",
             "hour_appointment",
             "payment",
-            "animal",
+            "pet",
         ]
 
 class SchedulingPostSerializer(serializers.ModelSerializer):
@@ -38,14 +38,14 @@ class SchedulingPostSerializer(serializers.ModelSerializer):
             "date_appointment",
             "hour_appointment",
             "payment",
-            "animal",
+            "pet",
         ]
     
     def validate(self, data):
 
         if not date_appointment_greater_today(data['date_appointment']):
             raise serializers.ValidationError(
-                {'Date': "A data inicial deve ser maior ou igual que hoje!"}
+                {'date': "A data inicial deve ser maior ou igual que hoje!"}
             )
 
         return data

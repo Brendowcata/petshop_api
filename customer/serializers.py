@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from customer.models import CustomerModel
-from animal.serializers import AnimalSerializer
+from pet.serializers import PetSerializer
 from customer.validators import *
 
 class CustomerSerializer(serializers.ModelSerializer):
-    animal = AnimalSerializer(many = True, read_only=True)
+    pet = PetSerializer(many = True, read_only=True)
 
     class Meta:
         model = CustomerModel
@@ -17,7 +17,7 @@ class CustomerSerializer(serializers.ModelSerializer):
             "email",
             "telephone",
             "phone_number",
-            'animal'
+            'pet',
             ]
 
 class CustomerPostSerializer(serializers.ModelSerializer):
@@ -32,28 +32,28 @@ class CustomerPostSerializer(serializers.ModelSerializer):
             "email",
             "telephone",
             "phone_number",
-            'animal'
+            'pet',
             ]
     
     def validate(self, data):
-        if not telephone_isValid(data['telephone']):
+        if not is_telephone_valid(data['telephone']):
             raise serializers.ValidationError(
-                {'Telephone': "Este campo deve ter 14 dígitos! Favor utilizar este formato (XX) XXXX-XXXX"}
+                {'telephone': "Este campo deve ter 14 dígitos! Favor utilizar este formato (XX) XXXX-XXXX"}
                 )
         
-        if not name_isValid(data['name']):
+        if not is_name_valid(data['name']):
             raise serializers.ValidationError(
-                {'Name': "Este campo não deve conter números!"}
+                {'name': "Este campo não deve conter números!"}
             )
         
         if not phone_number_isValid(data['phone_number']):
             raise serializers.ValidationError(
-                {'Phone_number': "Este campo deve ter 15 dígitos! Favor utilizar este formato (XX) 9XXXX-XXXX"}
+                {'phone_number': "Este campo deve ter 15 dígitos! Favor utilizar este formato (XX) 9XXXX-XXXX"}
                 )
         
-        if not cpf_isValid(data['cpf']):
+        if not is_cpf_valid(data['cpf']):
             raise serializers.ValidationError(
-                {'CPF': "Digite um CPF Válido!"}
+                {'cpf': "Digite um CPF Válido!"}
             )
 
         return data
