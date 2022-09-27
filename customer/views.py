@@ -12,6 +12,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
         'post', 
         'put', 
         'patch',
+        'delete',
         ]
 
     ordering_fields = [

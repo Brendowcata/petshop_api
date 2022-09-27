@@ -1,6 +1,5 @@
 import uuid
 from django.db import models
-from address.enums import States_Type
 
 from customer.models import CustomerModel
 
@@ -24,13 +23,6 @@ class AddressModel(models.Model):
         max_length=50, 
         ) #Cidade
 
-    state = models.CharField(
-        max_length=2, 
-        choices=States_Type.choices(), 
-        blank=False, 
-        null=False, 
-        ) #Estado/UF
-
     zip_code = models.CharField(
         max_length=9, 
         ) #CEP
@@ -42,6 +34,7 @@ class AddressModel(models.Model):
     customer = models.ForeignKey(
         CustomerModel, 
         on_delete=models.CASCADE,
+        related_name="address",
         null=False,
         ) #Cliente
     

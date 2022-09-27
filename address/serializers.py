@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from address.models import AddressModel
-from address.validators import *
+from address.validators import is_city_valid, is_house_number_valid, is_zip_code_valid
 
 class AddressSerializer(serializers.ModelSerializer):
 
@@ -12,7 +12,6 @@ class AddressSerializer(serializers.ModelSerializer):
             "street",
             "neighborhood",
             "city",
-            "state",
             "zip_code",
             "house_number",
             "customer",
@@ -27,7 +26,6 @@ class AddressPostSerializer(serializers.ModelSerializer):
             "street",
             "neighborhood",
             "city",
-            "state",
             "zip_code",
             "house_number",
             "customer",

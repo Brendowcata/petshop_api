@@ -1,10 +1,13 @@
+from email.headerregistry import Address
 from rest_framework import serializers
 from customer.models import CustomerModel
 from pet.serializers import PetSerializer
+from address.serializers import AddressSerializer
 from customer.validators import *
 
 class CustomerSerializer(serializers.ModelSerializer):
     pet = PetSerializer(many = True, read_only=True)
+    address = AddressSerializer(many = True, read_only=True)
 
     class Meta:
         model = CustomerModel
@@ -17,6 +20,7 @@ class CustomerSerializer(serializers.ModelSerializer):
             "email",
             "telephone",
             "phone_number",
+            "address",
             'pet',
             ]
 
@@ -32,6 +36,7 @@ class CustomerPostSerializer(serializers.ModelSerializer):
             "email",
             "telephone",
             "phone_number",
+            "address",
             'pet',
             ]
     

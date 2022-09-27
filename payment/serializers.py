@@ -40,17 +40,17 @@ class PaymentPostSerializer(serializers.ModelSerializer):
 
         if not pay_day_greater_or_equal_today(data['pay_day']):
             raise serializers.ValidationError(
-                {'Pay_day': "A data inicial deve ser maior ou igual que hoje!"}
+                {'pay_day': "A data inicial deve ser maior ou igual que hoje!"}
             )
         
         if not is_value_money_positive(data['value_money']):
             raise serializers.ValidationError(
-                {'Value_money': "O valor deve ser maior que 0"}
+                {'value_money': "O valor deve ser maior que 0"}
             )
 
         if not is_amount_paid_positive(data['amount_paid']):
             raise serializers.ValidationError(
-                {'Amount_paid': "O valor deve ser maior que 0"}
+                {'amount_paid': "O valor deve ser maior que 0"}
             )
 
         return data
