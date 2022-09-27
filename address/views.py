@@ -28,7 +28,6 @@ class AddressViewSet(viewsets.ModelViewSet):
         'street', 
         'neighborhood', 
         'city', 
-        'state', 
         'zip_code', 
         'customer'
         ]
