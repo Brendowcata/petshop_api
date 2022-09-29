@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Clipping_Type(Enum):
+class ClippingType(Enum):
 
     SEM_SERVICO = "Sem Serviço"
     TOSA_TESOURA = "Tosa na Tesoura"

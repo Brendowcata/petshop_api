@@ -1,7 +1,7 @@
 from dataclasses import field
 from rest_framework import serializers
 from scheduling.models import SchedulingModel
-from scheduling.validators import *
+from scheduling.validators import date_appointment_greater_today
 
 class SchedulingSerializer(serializers.ModelSerializer):
     class Meta:

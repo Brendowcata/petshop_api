@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from pet.models import PetModel
-from pet.validators import *
+from pet.validators import is_name_valid
 
 
 class PetSerializer(serializers.ModelSerializer):

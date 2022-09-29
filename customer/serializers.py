@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from customer.models import CustomerModel
 from pet.serializers import PetSerializer
-from customer.validators import *
+from customer.validators import is_cpf_valid, is_name_valid, is_telephone_valid, is_phone_number_valid
 
 class CustomerSerializer(serializers.ModelSerializer):
     pet = PetSerializer(many = True, read_only=True)
@@ -46,7 +46,7 @@ class CustomerPostSerializer(serializers.ModelSerializer):
                 {'name': "Este campo não deve conter números!"}
             )
         
-        if not phone_number_isValid(data['phone_number']):
+        if not is_phone_number_valid(data['phone_number']):
             raise serializers.ValidationError(
                 {'phone_number': "Este campo deve ter 15 dígitos! Favor utilizar este formato (XX) 9XXXX-XXXX"}
                 )

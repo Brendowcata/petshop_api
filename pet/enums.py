@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Breed_Type(Enum):
+class BreedType(Enum):
 
     AKITA = "Akita"
     AMERICAN_BULLY = "American Bully"
@@ -83,7 +83,7 @@ class Breed_Type(Enum):
     def choices(cls):
         return tuple((i.name, i.value) for i in cls)
 
-class Size_Type(Enum):
+class SizeType(Enum):
 
     PEQUENO = "Pequeno"
     MEDIO = "Médio"
@@ -93,7 +93,7 @@ class Size_Type(Enum):
     def choices(cls):
         return tuple((i.name, i.value) for i in cls)
     
-class Gender_Type(Enum):
+class GenderType(Enum):
 
     M = "Masculino"
     F = "Feminino"
@@ -102,7 +102,7 @@ class Gender_Type(Enum):
     def choices(cls):
         return tuple((i.name, i.value) for i in cls)
 
-class Color_Type(Enum):
+class ColorType(Enum):
 
     ALBINO = "Albino"
     AMARELO = "Amarelo"

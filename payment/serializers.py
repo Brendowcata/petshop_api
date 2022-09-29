@@ -1,6 +1,6 @@
 from payment.models import PaymentModel
 from datetime import datetime
-from payment.validators import *
+from payment.validators import is_amount_paid_positive, is_value_money_positive, pay_day_greater_or_equal_today
 from rest_framework import serializers
 
 class PaymentSerializer(serializers.ModelSerializer):

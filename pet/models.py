@@ -1,5 +1,5 @@
 from django.db import models
-from pet.enums import Breed_Type, Color_Type, Gender_Type, Size_Type
+from pet.enums import BreedType, ColorType, GenderType, SizeType
 from customer.models import CustomerModel
 import uuid
 
@@ -18,28 +18,28 @@ class PetModel(models.Model):
     
     gender = models.CharField(
         max_length=1,
-        choices=Gender_Type.choices(),
+        choices=GenderType.choices(),
         blank=False,
         null=False,
     ) #Gênero
 
     breed = models.CharField(
         max_length=30,
-        choices=Breed_Type.choices(), 
+        choices=BreedType.choices(), 
         blank=False, 
         null=False, 
         ) #Raça
 
     size = models.CharField(
         max_length=7,
-        choices=Size_Type.choices(), 
+        choices=SizeType.choices(), 
         blank=False, 
         null=False, 
         ) #Tamanho
 
     color = models.CharField(
         max_length=15,
-        choices=Color_Type.choices(), 
+        choices=ColorType.choices(), 
         blank=False, 
         null=False, 
         ) #Cor

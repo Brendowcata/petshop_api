@@ -3,7 +3,7 @@ from pet.models import PetModel
 import uuid
 from payment.models import PaymentModel
 
-from scheduling.enums import Clipping_Type
+from scheduling.enums import ClippingType
 
 class SchedulingModel(models.Model):
 
@@ -19,7 +19,7 @@ class SchedulingModel(models.Model):
 
     clipping = models.CharField(
         max_length=15,
-        choices=Clipping_Type.choices(),
+        choices=ClippingType.choices(),
     ) #Tipo de Tosa
 
     hydration = models.BooleanField(
