@@ -32,7 +32,6 @@ class CustomerPostSerializer(serializers.ModelSerializer):
             "email",
             "telephone",
             "phone_number",
-            'pet',
             ]
     
     def validate(self, data):

@@ -28,10 +28,6 @@ class PaymentModel(models.Model):
     pay_day = models.DateField(
     ) #Data de pagamento
     
-    is_paid = models.BooleanField(
-        default=False,
-    ) #Está Pago
-
     class Meta:
         db_table = "PAYMENT"
         verbose_name = "payment"
