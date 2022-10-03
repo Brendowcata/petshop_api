@@ -2,8 +2,11 @@ from dataclasses import field
 from rest_framework import serializers
 from scheduling.models import SchedulingModel
 from scheduling.validators import date_appointment_greater_today
+from pet.serializers import PetSerializer
 
 class SchedulingSerializer(serializers.ModelSerializer):
+    pet = PetSerializer(read_only=True)
+
     class Meta:
         model = SchedulingModel
         fields = [
