@@ -11,3 +11,7 @@ def is_value_money_positive(value_money):
 def is_amount_paid_positive(amount_paid):
     """Check if the value is positive / Verifica se o valor é positivo"""
     return amount_paid >= 0
+
+def is_amount_paid_less_or_equal_value_money(value_money, amount_paid):
+    """Check if the amount paid is less than or equal to the value money"""
+    return amount_paid <= value_money
